@@ -8,7 +8,7 @@ return {
 
   -- LSP
   { "neovim/nvim-lspconfig" },
-  { "williamboman/mason.nvim" },
+  { "mason-org/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
 
   -- Autocompletion
@@ -76,7 +76,7 @@ return {
   { "nvim-neotest/nvim-nio" },
   { "mfussenegger/nvim-dap",          dependencies = { "nvim-neotest/nvim-nio" } },
   { "rcarriga/nvim-dap-ui",           dependencies = { "mfussenegger/nvim-dap" } },
-  { "jay-babu/mason-nvim-dap.nvim",   dependencies = { "wiliamboman/mason.nvim" } },
+  { "jay-babu/mason-nvim-dap.nvim",   dependencies = { "mason-org/mason.nvim" } },
 
   { 'akinsho/toggleterm.nvim',        version = "*",                                   config = true },
 

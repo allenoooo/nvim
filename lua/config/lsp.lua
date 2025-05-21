@@ -17,30 +17,10 @@ end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local servers = { "gopls", "clangd", "terraformls" }
+local servers = { "clangd", "terraformls" }
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
     capabilities = capabilities,
     on_attach = on_attach,
   }
 end
-
-lspconfig.lua_ls.setup({
-  settings = {
-    Lua = {
-      runtime = {
-        version = "LuaJIT", -- Neovim uses LuaJIT
-      },
-      diagnostics = {
-        globals = { "vim" }, -- Recognize the `vim` global
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true), -- Make server aware of Neovim runtime files
-        checkThirdParty = false,                           -- Optional: avoid popup suggestions
-      },
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-})
