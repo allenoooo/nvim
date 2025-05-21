@@ -16,7 +16,6 @@ return {
   { "hrsh7th/cmp-nvim-lsp" },
   { "L3MON4D3/LuaSnip" },
 
-  -- Telescope
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
@@ -25,6 +24,15 @@ return {
 
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
+  {
+    "cuducos/yaml.nvim",
+    ft = { "yaml" }, -- optional
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "folke/snacks.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+  },
   { "nvim-tree/nvim-web-devicons" },
   {
     'akinsho/bufferline.nvim',
