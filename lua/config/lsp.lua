@@ -11,13 +11,14 @@ mason_lspconfig.setup({
 
 local on_attach = function(_, bufnr)
   local opts = { buffer = bufnr, desc = "" }
-  vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Go to definition" })
-  vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { buffer = bufnr, desc = "Go to references" })
+
+  vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition", unpack(opts) })
+  vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references", unpack(opts) })
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local servers = { "clangd", "terraformls" }
+local servers = { "terraformls" }
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
     capabilities = capabilities,

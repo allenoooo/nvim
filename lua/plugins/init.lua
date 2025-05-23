@@ -22,6 +22,55 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" }
   },
 
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {
+      enable = true,
+      max_lines = 3,        -- How many lines of context to show
+      trim_scope = "outer", -- "inner" or "outer"
+      mode = "cursor",      -- or "topline"
+      separator = "-",
+    },
+  },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {
+      indent = { char = "│" }, -- customize guide style
+      scope = {
+        enabled = true,
+        show_start = true,
+        show_end = false,
+        highlight = "IblScope",
+
+      },
+    },
+  },
+
+  { "MunifTanjim/nui.nvim" },
+
+  { "rcarriga/nvim-notify" },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+      "hrsh7th/nvim-cmp",
+    }
+  },
+
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
   {
