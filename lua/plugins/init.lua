@@ -23,24 +23,6 @@ return {
 	},
 
 	{
-		"epwalsh/obsidian.nvim",
-		version = "*",
-		lazy = true,
-		ft = "markdown",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		opts = {
-			workspaces = {
-				{
-					name = "personal",
-					path = "~/Documents/Obsidian/YourVault",
-				},
-			},
-		},
-	},
-
-	{
 		"nvim-treesitter/nvim-treesitter-context",
 		event = "VeryLazy",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
