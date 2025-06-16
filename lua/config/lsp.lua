@@ -24,3 +24,11 @@ for _, server in ipairs(servers) do
 		on_attach = on_attach,
 	})
 end
+
+require("lspconfig").jsonls.setup({
+	settings = {
+		json = {
+			validate = { enable = true },
+		},
+	},
+})

@@ -36,9 +36,5 @@ keymap.set("n", "<leader>ra", function()
 end, { desc = "Rename symbol (LSP)" })
 
 -- custom stuff
-keymap.set(
-	"n",
-	"<leader>gb",
-	"<cmd>TermExec cmd='go build -o build/ethos cmd/main.go '<CR>",
-	{ desc = "Build project" }
-)
+keymap.set("n", "<leader>rb", "<cmd>TermExec cmd='cargo build'<CR>", { desc = "Build project" })
+keymap.set("n", "<leader>rr", "<cmd>TermExec cmd='cargo run'<CR>", { desc = "Run project" })
