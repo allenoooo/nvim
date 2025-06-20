@@ -37,3 +37,17 @@ vim.cmd([[
 local orig_notify = vim.notify
 
 vim.notify = filter_notify
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.swift",
+	callback = function()
+		-- Save cursor position
+		local view = vim.fn.winsaveview()
+		-- Run swift-format on the current file
+		vim.cmd("silent !swift-format -i " .. vim.fn.expand("%"))
+		-- Reload the file
+		vim.cmd("edit!")
+		-- Restore cursor position
+		vim.fn.winrestview(view)
+	end,
+})
