@@ -19,6 +19,8 @@ keymap.set("n", "dp", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" }
 keymap.set("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertical split" })
 keymap.set("n", "<leader>sh", "<cmd>split<cr>", { desc = "Horizontal split" })
 
+keymap.set("n", "<leader>dt", "<cmd>Gitsigns diffthis<CR>", { desc = "gitsigns diff" })
+
 keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
 keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
 keymap.set("n", "<leader>x", "<cmd>bdelete<cr>", { desc = "Close current buffer" })
@@ -36,5 +38,4 @@ keymap.set("n", "<leader>ra", function()
 end, { desc = "Rename symbol (LSP)" })
 
 -- custom stuff
-keymap.set("n", "<leader>rb", "<cmd>TermExec cmd='cargo build'<CR>", { desc = "Build project" })
-keymap.set("n", "<leader>rr", "<cmd>TermExec cmd='cargo run'<CR>", { desc = "Run project" })
+keymap.set("n", "<leader>sr", "<cmd>TermExec cmd='swift run'<CR>", { desc = "Run project" })

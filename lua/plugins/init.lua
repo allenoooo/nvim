@@ -200,4 +200,11 @@ return {
 		version = "^6", -- Recommended
 		lazy = false, -- This plugin is already lazy
 	},
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			-- add any options here
+		},
+	},
+	{ "lewis6991/gitsigns.nvim" },
 }

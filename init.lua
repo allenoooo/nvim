@@ -26,6 +26,7 @@ require("config.options")
 require("config.theme")
 require("config.noice")
 
+vim.opt.wrap = false
 vim.cmd.colorscheme("catppuccin-mocha")
 vim.cmd([[
   highlight IblScope guifg=#7aa2f7 gui=nocombine

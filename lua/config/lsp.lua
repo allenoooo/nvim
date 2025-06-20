@@ -32,3 +32,5 @@ require("lspconfig").jsonls.setup({
 		},
 	},
 })
+
+require("lspconfig").sourcekit.setup({})
